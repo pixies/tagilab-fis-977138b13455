@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file. sanderson
+ * The main template file.
  *
  * This is the most generic template file in a WordPress theme and one of the
  * two required files for a theme (the other being style.css).
@@ -108,7 +108,7 @@ figure {
 
 <div class="section no-pad-bot">
     <div class="row">
-      <div class="col s12 white margem">
+      <div class="col s12 white">
 	  
 <div class="col s12 m12 l9"><!-- Conteudo Principal :: Acaba antes do parallax com os icones dos cursos -->
 <div class="row"><!-- Inicio linha2 -->  

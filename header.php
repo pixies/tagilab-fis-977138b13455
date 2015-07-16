@@ -26,8 +26,8 @@
 	</style>
 		 
         
-		<link href="<?php echo get_template_directory_uri(); ?>/assets/css/materialize.min.css" rel="stylesheet" type="text/css" media="all">
-        <link href="<?php echo get_template_directory_uri(); ?>/assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<?php echo get_template_directory_uri(); ?>/assets/css/materialize.min.css" rel="stylesheet" type="text/css" media="all">
+    <link href="<?php echo get_template_directory_uri(); ?>/assets/css/animate.css" rel="stylesheet" type="text/css" media="all">
     <link href="<?php echo get_template_directory_uri(); ?>/assets/css/icons-fis.css" rel="stylesheet" type="text/css" media="all">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css">
 	<link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" rel="shortcut icon" />
@@ -43,7 +43,7 @@
 	
 </head>
 
-<body bgcolor="#fff">
+<body>
 	<header>
 		<div class="navbar-fixed">
 		<!-- Dropdown Structure -->

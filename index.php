@@ -124,9 +124,9 @@ figure {
         while($recent->have_posts()) : $recent->the_post();
       ?> 
                
-                
-       <li class="effect-honey">
-         <?php the_post_thumbnail('recent-posts',array('class'=>'img-responsive')); ?>
+                  
+       <li class="effect-honey"><a href="<?php echo get_permalink($recent->ID); ?>"> 
+         <?php the_post_thumbnail('recent-posts',array('class'=>'img-responsive')); ?></a>
         <div class="caption center-align">
           <h3><?php the_title(); ?></h3>
           

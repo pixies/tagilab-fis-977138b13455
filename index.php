@@ -286,31 +286,24 @@ figure {
 <div id="hero" class="hero parallax-effect ">
 		 
                <?php 
-			   $tipo_curso = array(
-			    array("Graduação","1"),
-			    array("Pos Graduação","2"),
-			    array("Tecnologo","3")
-			   );
-			  
-		                       // chave_curso |           nome do curso                | icone do curso //
-           
-         $cursos = array( array( "id" => "1", "nome" => "Administração de Empresas", "icon" => "fis-farmacia"),
-						  array( "id" => "1", "nome" => "Bacharel em Direito",       "icon" => "fis-farmacia"),
-						  array( "id" => "1", "nome" => "Bacharel em Contabilidade", "icon" => "fis-farmacia"),
-						  array( "id" => "1", "nome" => "Bacharel em Enfermagem",    "icon" => "fis-farmacia"),
-						  array( "id" => "1", "nome" => "Administração de Empresas", "icon" => "fis-farmacia"),
-						  
-						  array( "id" => "2", "nome" => "Bacharel em Farmácia",       "icon" => "fis-farmacia"),
-						  array( "id" => "2", "nome" => "Bacharel em Fisioterapia",   "icon" => "fis-farmacia"),
-						  array( "id" => "2", "nome" => "Tecnologo em Segurança do Trabalho", "icon" => "fis-farmacia"),
-						  
-						  array( "id" => "3", "nome" => "Tecnologo em Redes de Computadores", "icon" => "fis-farmacia"),
-						  array( "id" => "3", "nome" => "Tecnologo em Redes",        "icon" => "fis-farmacia")	 	  
-											 
-					  );
-						
-			   ?> 
-                
+			
+				 $graduacao = get_page_by_title( 'Graduação' );  
+                 $pos       = get_page_by_title( 'Pós-graduação' );
+				 $tecnologo = get_page_by_title( 'Tecnológo' );
+				
+	           
+				 $get_graduacao  = get_pages( array( 'child_of' =>$graduacao->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc',
+				 'parent'=> $graduacao->ID ) );
+				 $get_pos       = get_pages( array( 'child_of' => $pos->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc',
+				 'parent'=> $pos->ID  ) );
+				 $get_tecnologo = get_pages( array( 'child_of' => $tecnologo->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc',
+				 'parent'=> $tecnologo->ID  ) );
+				 
+		        
+       ?>
+         
+    </ul>
+ 
                 
                 
            
@@ -327,42 +320,42 @@ figure {
                         <div id="graduacao" class="col s12 amarelo ">
                  <?php 
 						// imprimir todos os elementos da graduação
-				  foreach ($cursos as $curso):
-					 if($curso['id'] == 1): ?>
+				  foreach ($get_graduacao as $grad_name):
+					  ?>
 						   <div class="col s12 m6 l4 margim-top-boton">
                                  <div class="valign-wrapper">
-                                          <span class="<?php echo $curso['icon']; ?>"> </span>
-                                          <span class="title-cursos"><?php echo $curso['nome']; ?></span>
+                                          <span class="<?php //echo $grad_name->post_content ?>"> </span>
+                                          <span class="title-cursos"><?php echo $grad_name->post_title; ?></span>
                                   </div>
                            </div>
-                 <?php	endif; endforeach; ?>
+                 <?php	  endforeach; ?>
                        </div> <!---graduação--->
                         
                       <div id="posgraduacao" class="col s12 amarelo ">
-                 <?php 
+                       <?php 
 						// imprimir todos os elementos da graduação
-				  foreach ($cursos as $curso):
-					 if($curso['id'] == 2): ?>
+				  foreach ($get_pos as $pos_name):
+					  ?>
 						   <div class="col s12 m6 l4 margim-top-boton">
                                  <div class="valign-wrapper">
-                                          <span class="<?php echo $curso['icon']; ?>"> </span>
-                                          <span class="title-cursos"><?php echo $curso['nome']; ?></span>
+                                          <span class="<?php //echo $grad_name->post_content ?>"> </span>
+                                          <span class="title-cursos"><?php echo $pos_name->post_title; ?></span>
                                   </div>
                            </div>
-                 <?php	endif; endforeach; ?>
-                       </div> <!---posgraduacao--->
+                 <?php	  endforeach; ?>
+                        </div>
                        <div id="tecnologo" class="col s12 amarelo ">
-                 <?php 
+              <?php 
 						// imprimir todos os elementos da graduação
-				  foreach ($cursos as $curso):
-					 if($curso['id'] == 3): ?>
+				  foreach ($get_tecnologo as $tec_name):
+					  ?>
 						   <div class="col s12 m6 l4 margim-top-boton">
                                  <div class="valign-wrapper">
-                                          <span class="<?php echo $curso['icon']; ?>"> </span>
-                                          <span class="title-cursos"><?php echo $curso['nome']; ?></span>
+                                          <span class="<?php //echo $grad_name->post_content ?>"> </span>
+                                          <span class="title-cursos"><?php echo $tec_name->post_title; ?></span>
                                   </div>
                            </div>
-                 <?php	endif; endforeach; ?>
+                 <?php	  endforeach; ?>
                        </div> <!---tecnologo--->
                  </div><!---row--->
              </div> <!---fim da grade dos cursos --->
@@ -399,10 +392,19 @@ figure {
 <div class="card">
         <div class="card-content">
           <span class="card-title grey-text text-darken-4">Facebook #FISEMAIS<i class="mdi-navigation-more-vert right"></i></span>
-        </div>
-          <div class="video-container no-controls">
-          <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0;autohide=1" frameborder="0" allowfullscreen></iframe>
-        </div>
+        </div>  <ul class="collection">  
+             <?php 
+        $recent = new WP_Query("category_name=FIS&showposts=5"); 
+        while($recent->have_posts()) : $recent->the_post();
+        ?> 
+             <li class="collection-item avatar selected">
+                 <?php the_post_thumbnail('thumbnail', array('class' => 'circle')); ?>
+                   <span class="email-title"> <?php the_title(); ?></span>
+                  <p class="truncate grey-text ultra-small"> <?php echo the_date(); ?></p>
+                     
+                    </li>
+                   
+                    <?php endwhile; ?> </ul>
       </div>
 
 </div>
@@ -415,7 +417,7 @@ figure {
           <span class="card-title grey-text text-darken-4">Instagran #FIS<i class="mdi-navigation-more-vert right"></i></span>
         </div>
           <div class="video-container no-controls">
-          <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0;autohide=1" frameborder="0" allowfullscreen></iframe>
+          <?php if ( dynamic_sidebar('insta_fis') ) : else : endif; ?>
         </div>
       </div>
 

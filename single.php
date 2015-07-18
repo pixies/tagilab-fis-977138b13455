@@ -40,14 +40,23 @@ h1{font-size:x-large !important;}
           	<?php
 				// Start the Loop.
 				while ( have_posts() ) : the_post(); ?>
-                
+                	<?php
+			if ( is_single() ) :
+				the_title( '<h1 class="entry-title">', '</h1>' );
+			else :
+				the_title( '<h1 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' );
+			endif;
+		?>
+         
                 
                 <div class="card medium" style="  margin: -10px; ">
                 <div class="col s12 m12 l12" style="   margin-left: -20px; position:relative; ">
                   <?php  the_post_thumbnail('recent-posts', array('class'=>'responsive-image')); ?>
 				  </div></div>
                   
-              <div class="col s12 m12 l12" style="position:relative;">    
+
+
+              <div class="col s12 m12 l12" style="position:relative; margin-top:30px;">    
               
 				<?php	get_template_part( 'content', get_post_format() );?>
                 </div>
@@ -64,33 +73,9 @@ h1{font-size:x-large !important;}
         <div class="col l3">
             <div id="aside">
               
-                <div class="divider"></div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="//placehold.it/800x450/FF9800/EE00BB">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-image">
-                        <img src="//placehold.it/800x450/FF9800/EE00BB">
-                        <span class="card-title">Card Title</span>
-                    </div>
-                    <div class="card-content">
-                        <p>I am a very simple card. I am good at containing small bits of information. I am convenient because I require little markup to use effectively.</p>
-                    </div>
-                    <div class="card-action">
-                        <a href="#">This is a link</a>
-                    </div>
-                </div>
-
+     
+<?php     get_sidebar(); ?>
+            
                
             </div>
 
@@ -102,5 +87,5 @@ h1{font-size:x-large !important;}
 
 
 <?php
- //get_sidebar();
+ //
 get_footer();

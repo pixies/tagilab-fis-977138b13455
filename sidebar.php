@@ -9,7 +9,7 @@
  */
 ?>
 
-<div id="secondary" class="borda <?php echo odin_classes_page_sidebar_aside(); ?>" role="complementary">
+<div id="secondary"  role="complementary">
 	<?php
 		if ( ! dynamic_sidebar( 'main-sidebar' ) ) {
 			the_widget( 'WP_Widget_Recent_Posts', array( 'number' => 10 ) );

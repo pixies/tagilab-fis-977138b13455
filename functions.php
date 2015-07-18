@@ -357,8 +357,26 @@ function arphabet_tv_widgets_init() {
 	 );
 
 }
+function arphabet_insta_widgets_init() {
+
+	register_sidebar(  
+	array(
+		'name'          => 'Instangran Fis',
+		'id'            => 'insta_fis',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	)
+	
+	
+	
+	 );
+
+}
 add_action( 'widgets_init', 'arphabet_calendar_widgets_init' );
 add_action( 'widgets_init','arphabet_tv_widgets_init' );
+add_action( 'widgets_init','arphabet_insta_widgets_init' );
 // Add post thumbnail functionality
 add_theme_support('post-thumbnails');
 add_image_size('blog-large', 669, 272, true);

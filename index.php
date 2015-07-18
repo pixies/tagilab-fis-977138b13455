@@ -325,7 +325,7 @@ figure {
 						   <div class="col s12 m6 l4 margim-top-boton">
                                  <div class="valign-wrapper">
                                           <span class="<?php //echo $grad_name->post_content ?>"> </span>
-                                          <span class="title-cursos"><?php echo $grad_name->post_title; ?></span>
+                                          <span class="title-cursos"><a href="<?php echo get_page_link( $grad_name->ID ); ?>"><?php echo $grad_name->post_title; ?></a></span>
                                   </div>
                            </div>
                  <?php	  endforeach; ?>

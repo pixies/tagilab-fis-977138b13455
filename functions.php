@@ -372,8 +372,10 @@ function arphabet_insta_widgets_init() {
 	
 	
 	 );
+	 
 
 }
+ 
 add_action( 'widgets_init', 'arphabet_calendar_widgets_init' );
 add_action( 'widgets_init','arphabet_tv_widgets_init' );
 add_action( 'widgets_init','arphabet_insta_widgets_init' );

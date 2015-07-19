@@ -90,7 +90,11 @@ body{  background-color: #fdd406 !important;}
 <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
  
- <div class="col offset-l1 l10 s12 white  z-depth-1">
+ <div class="row margem">
+ 
+
+ 
+ <div class="col l8 s12 white  z-depth-1" style="min-height:532px;  margin-top: 8px;">
  <div id="tabs"> 
     <ul class="col s12 m12 l3" style="position:relative;min-height: 200px;">
       
@@ -146,11 +150,43 @@ $('#tabs')
 </script>
 		
        
-       
-      </div> 
-     </div>
-  </div>
-</div><!-- FIM linha4 -->
+       </div>
+     
+	  
+	  
+	  <!-- noticias do curso -->
+	  
+	  
+	   <div class="col s12 m6 l4">
+
+<div class="card">
+        <div class="card-content">
+          <span class="card-title grey-text text-darken-4">Noticias do Curso<i class="mdi-navigation-more-vert right"></i></span>
+        </div>
+          <ul class="collection">  
+		   
+             <?php 
+			 
+			 // seria com que os posts tivesse uma cateria cursos ou uma tag tipo direito
+			 //
+			 //
+        $recent = new WP_Query("category_name=FIS&showposts=5"); 
+        while($recent->have_posts()) : $recent->the_post();
+        ?> 
+             <li class="collection-item avatar selected">
+                 <?php the_post_thumbnail('thumbnail', array('class' => 'circle')); ?>
+                   <span class="email-title"> <?php the_title(); ?></span>
+                  <p class="truncate grey-text ultra-small"> <?php echo the_date(); ?></p>
+                     
+                    </li>
+                   
+                    <?php endwhile; ?> </ul>
+                    </div>
+               </div>
+           </div> 
+      </div>
+   </div>
+ </div><!-- FIM linha4 -->
 
 
 <div class="row amarelo margem"><!-- Inicio linha3 -->
@@ -163,9 +199,7 @@ $('#tabs')
         <div class="card-content">
           <span class="card-title grey-text text-darken-4">Instagran #FIS<i class="mdi-navigation-more-vert right"></i></span>
         </div>
-          <div class="video-container no-controls">
-          <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0;autohide=1" frameborder="0" allowfullscreen></iframe>
-        </div>
+          <?php if ( dynamic_sidebar('revista_curso') ) : else : endif; ?>
       </div>
 
 </div>
@@ -173,13 +207,11 @@ $('#tabs')
 
 <div class="col s12 m6 l4">
 
-<div class="card">
+<div class="card"> 
         <div class="card-content">
-          <span class="card-title grey-text text-darken-4">Facebook #FISEMAIS<i class="mdi-navigation-more-vert right"></i></span>
+          <span class="card-title grey-text text-darken-4">Noticias do curso<i class="mdi-navigation-more-vert right"></i></span>
         </div>
-          <div class="video-container no-controls">
-          <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0;autohide=1" frameborder="0" allowfullscreen></iframe>
-        </div>
+           <?php if ( dynamic_sidebar('agenda_curso') ) : else : endif; ?>
       </div>
 
 </div>
@@ -191,9 +223,7 @@ $('#tabs')
         <div class="card-content">
           <span class="card-title grey-text text-darken-4">Instagran #FIS<i class="mdi-navigation-more-vert right"></i></span>
         </div>
-          <div class="video-container no-controls">
-          <iframe width="853" height="480" src="//www.youtube.com/embed/Q8TXgCzxEnw?rel=0;autohide=1" frameborder="0" allowfullscreen></iframe>
-        </div>
+           <?php if ( dynamic_sidebar('media_curso') ) : else : endif; ?>
       </div>
 
 </div>

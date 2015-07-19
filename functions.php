@@ -375,7 +375,63 @@ function arphabet_insta_widgets_init() {
 	 
 
 }
- 
+function arphabet_agenda_curso_widgets_init() {
+
+	register_sidebar(  
+	array(
+		'name'          => 'Agenda do Curso',
+		'id'            => 'agenda_curso',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	)
+	
+	
+	
+	 );
+	 
+
+}
+function arphabet_revista_curso_widgets_init() {
+
+	register_sidebar(  
+	array(
+		'name'          => 'Revista do Curso',
+		'id'            => 'revista_curso',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	)
+	
+	
+	
+	 );
+	 
+
+}
+function arphabet_medias_curso_widgets_init() {
+
+	register_sidebar(  
+	array(
+		'name'          => 'Medias sociais do Curso',
+		'id'            => 'media_curso',
+		'before_widget' => '<div>',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="rounded">',
+		'after_title'   => '</h2>',
+	)
+	
+	
+	
+	 );
+	 
+
+}
+add_action( 'widgets_init', 'arphabet_medias_curso_widgets_init' ); 
+add_action( 'widgets_init', 'arphabet_revista_curso_widgets_init' ); 
+add_action( 'widgets_init', 'arphabet_agenda_curso_widgets_init' );
 add_action( 'widgets_init', 'arphabet_calendar_widgets_init' );
 add_action( 'widgets_init','arphabet_tv_widgets_init' );
 add_action( 'widgets_init','arphabet_insta_widgets_init' );

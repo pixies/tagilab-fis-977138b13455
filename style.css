@@ -17,9 +17,14 @@ The theme css is in assets/css/style.css
 
 @media (max-width: 600px){
   .brand-logo {
-    margin-left: 100px;
-    border: 1px solid red;
+    width: 200px;
+    
   }
+    .brand-logo img {
+    width: 200px;
+    
+  }
+  
 }
 
 .margem {

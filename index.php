@@ -286,12 +286,12 @@ figure {
 <div id="hero" class="hero parallax-effect ">
 		 
                <?php 
-			
+			// pega os ids das paginas
 				 $graduacao = get_page_by_title( 'Graduação' );  
                  $pos       = get_page_by_title( 'Pós-graduação' );
 				 $tecnologo = get_page_by_title( 'Tecnológo' );
 				
-	           
+	           // pega as filhas de primeira ordem das paginas mae  
 				 $get_graduacao  = get_pages( array( 'child_of' =>$graduacao->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc',
 				 'parent'=> $graduacao->ID ) );
 				 $get_pos       = get_pages( array( 'child_of' => $pos->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc',

@@ -84,8 +84,8 @@ $('#aside').pushpin({ top:110, bottom:300 });
 		  });
 	  </script>
 	
-	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/retina.js"></script>
-			
+ 
+		<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/assets/js/retina.js"></script>	
 					
 </body>
 </html>

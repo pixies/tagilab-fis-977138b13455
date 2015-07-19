@@ -83,7 +83,8 @@
 
 			<nav class="yellow accent-4">
 				<div id="font-setting-buttons" class="nav-wrapper z-depth-0 blue-text text-darken-2">
-				 	<a class="brand-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-log" rel="home"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png"></a>
+				 	<a class="brand-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-log" rel="home">
+                    <img srcset="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png 1x"></a>
 	 				<a href="#" data-activates="mobile-demo" class="white-text button-collapse"><i class="mdi-navigation-menu"></i></a>
 	 				<a href="#" data-activates="mobile-dem" class="white-text right"><i class="mdi-action-search"></i></a>
 	 				<a id="reduz_fonte" class="white-text right decrease-me" href="#" title="Reduzir tamanho da fonte">A-</a>

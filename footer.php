@@ -75,10 +75,11 @@
 	  <script type="text/javascript">
 		  $( document ).ready(function(){
 		  	$(".button-collapse").sideNav();
-			$('.slider').slider({full_width: true});
-						  $(".button-collapse").sideNav();
-$('.modal-trigger').leanModal();
-$('#aside').pushpin({ top:110, bottom:300 });
+			$('.slider').slider({full_width: true, indicators: false});
+
+			$(".button-collapse").sideNav();
+			$('.modal-trigger').leanModal();
+			$('#aside').pushpin({ top:110, bottom:300 });
 			  
 			  
 		  });

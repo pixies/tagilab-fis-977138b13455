@@ -16,8 +16,8 @@
 get_header(); ?>
 <style>
 .tabs .indicator{background:none !important;}
- .caption h3 {
-  font-weight: 100;
+ .caption h4 {
+  font-weight: 90;
 }
 
 .z-depth-3, .img-link:hover, .effect-honey:hover  {
@@ -56,7 +56,7 @@ figure {
 }
 }
 .hero {
-  padding-top: 40px;
+  padding-top: 0px;
   
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -78,23 +78,22 @@ figure {
 .scrollpoint.active {
   opacity: 1 \0;
 }
-.slider .slides li .caption {
+.slider .slides li .title {
   color: #fff;
   /* background-color: #000; */
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.83) 100%);
   position: absolute;
-  top: 0%;
+  bottom: 10%;
   left: 0px;
   width: 100%;
   opacity: 0;
 }
 .collection {border:none !important;}
-.margim-top-boton{ margin-bottom:40px; margin-top:40px;}
+.margim-top-boton{ margin-top:40px; margin-top:40px;}
  
- :active { 
-    background-color: fdd406;
-}
+ 
 </style>
+
 <div class="parallax-container slider"><!-- Slide prioncipal -->
      <ul class="slides">
       <li>
@@ -102,7 +101,7 @@ figure {
         <div class="caption center-align"></div>
       </li>
       
-      </li>
+      
     </ul>
 </div><!-- FIM Slide prioncipal -->
 
@@ -116,30 +115,31 @@ figure {
 <div class="col s12 m6 l6"><!-- Bloco de 3 Materias Principais - Primeira coluna -->
      <!-- loop da categoria FIS -->
       
-      <div class="card">
-      <div class="slider" style=" height:377px;  margin: 0.5rem 0 1rem 0;">
-        <ul class="slides" style=" height:340px; margin: 0.5rem 0 1rem 0;">
-      <?php 
-        $recent = new WP_Query("category_name=Destaque&showposts=3"); 
-        while($recent->have_posts()) : $recent->the_post();
-      ?> 
-               
-                  
-       <li class="effect-honey"><a href="<?php echo get_permalink($recent->ID); ?>"> 
-         <?php the_post_thumbnail('recent-posts',array('class'=>'img-responsive')); ?></a>
-        <div class="caption center-align">
-          <h3><?php the_title(); ?></h3>
+<div class="card blue-grey darken-1 slider">
+           
+      <ul class="slides">
+        <?php 
+          $recent = new WP_Query("category_name=Destaque&showposts=3"); 
+          while($recent->have_posts()) : $recent->the_post();
+        ?> 
+                 
+                    
+        <li class="effect-honey"><a href="<?php echo get_permalink($recent->ID); ?>"> 
+           <?php the_post_thumbnail('recent-posts'); ?></a>
           
-        </div>
-      </li>
-      
-      
-   
-      <?php endwhile; // Fim :: loop da categoria FIS ?>
+          <div class="title caption center-align black">
+            <h5><?php the_title(); ?></h5>  
+          </div>
+          <?php endwhile; // Fim :: loop da categoria FIS ?>
+        </li>
 
-     </ul> 
-  </div> </div>
-  </div><!-- FIM :: Bloco de 3 Materias Principais - Primeira coluna -->
+         
+      
+
+      </ul> 
+    </div>
+  
+</div><!-- FIM :: Bloco de 3 Materias Principais - Primeira coluna -->
 
  
 <div class="col s12 m6 l6"><!-- Cards Coluna Principal -->
@@ -154,6 +154,7 @@ figure {
       <span class="card-title activator grey-text text-darken-4">Veja mais</span>
      
     </div>
+   
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Ultimas Notícias Fies<i class="material-icons right">X</i></span>
             <ul class="collection">  
@@ -184,7 +185,7 @@ figure {
 <div class="col s12 m6 l6"><!-- Bloco de 3 Materias Principais - Primeira coluna -->
   <div class="card">
         <div class="card-content">
-          <span class="card-title grey-text text-darken-4">TV FIS<i class="mdi-navigation-more-vert right"></i></span>
+          <span class="card-title grey-text text-darken-4">TV FIS<i class="small material-icons right">theaters</i></span>
         </div>
          <?php if ( dynamic_sidebar('tv_fis') ) : else : endif; ?>
       </div>
@@ -194,7 +195,7 @@ figure {
 <div class="col s12 m6 l6"><!-- Cards Coluna Principal -->
    <div class="card">
         <div class="card-content ">
-          <span class="card-title">CALENDÁRIO<i class="mdi-navigation-more-vert right"></i></span>
+          <span class="card-title">CALENDÁRIO<i class="mdi-navigation-more-vert right">perm_contact_calendar</i></span>
         </div>
       <?php if ( dynamic_sidebar('calendario_fis') ) : else : endif; ?>
       
@@ -211,12 +212,12 @@ figure {
 
 
 
- <div class="col s12 m12 l3 "><!-- Conteudo Principal :: Acaba antes do parallax com os icones dos cursos -->
+ <div class="col s12 m12 l3"><!-- Conteudo Principal :: Acaba antes do parallax com os icones dos cursos -->
  
 <div class="col s12 m6 l12"><!-- Cards Coluna Principal -->
  <div class="card">
        <div class="card-content" style=" padding-right: 15px; ">
-          <span class="card-title activator grey-text text-darken-4">Portal Acadêmico<i class="mdi-navigation-more-vert right"></i></span>
+          <span class="left card-title activator grey-text text-darken-4">Portal Acadêmico<i class="tiny material-icons right">language</i></span>
         </div>
  
        
@@ -237,10 +238,10 @@ figure {
             <p>
               <input class="text-left" value="aluno" name="group1" type="radio" id="test1" />
               <label for="test1">Aluno</label>
-            
+            <br>
               <input name="group1" value="professor" type="radio" id="test2" />
               <label for="test2">Professor</label>
-           
+           <br>
               <input class="text-rigth" name="group1" type="radio" id="test3" />
               <label for="test3">Gestor</label>
               <p>
@@ -280,9 +281,9 @@ figure {
  </div>
  
 
-<div class="row"><!-- Inicio linha2 -->
+<div class="row pink"><!-- Inicio linha2 -->
 
- <div class="col offset-l1 l10 s12 white">
+ <div class="col offset-l1 l10 s12 pink">
 <div id="hero" class="hero parallax-effect ">
 		 
                <?php 
@@ -308,7 +309,8 @@ figure {
                 
            
                 
-                  <div class="row"><span class="white-text"><h4 class="white-text darken-2 light center">ENSINO</h4><br></span>
+                  <div class="row">
+                  <span class="white-text"><h4 class="white-text darken-2 light center">ENSINO</h4><br></span>
                      <div class="col s12">
                         <ul class="tabs">
                            <li class="tab col s3"><a class="active" href="#graduacao"><b>Graduação</b></a></li>

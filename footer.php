@@ -127,13 +127,13 @@ Contato: sesst@fis.edu.br</p>
 		  $( document ).ready(function(){
 		  	$(".button-collapse").sideNav();
 			$('.slider').slider({full_width: true});
-
-			$(".button-collapse").sideNav();
-			$('.modal-trigger').leanModal();
-			$('#aside').pushpin({ top:110, bottom:300 });
-			  
-			  
+   			$('.modal-trigger').leanModal();
+			$('#aside').pushpin({ top:110, bottom:300 });  
 		  });
+
+
+
+
 	  </script>
 	
  

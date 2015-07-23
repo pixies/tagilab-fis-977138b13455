@@ -20,7 +20,8 @@
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
-<div class="divider"></div>
+
+<div class="divider">iiiiiiiiiii</div>
 	<?php if ( is_search() ) : ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>

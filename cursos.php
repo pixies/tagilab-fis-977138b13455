@@ -25,12 +25,12 @@ get_header(); ?>
 </div><!-- FIM Slide prioncipal -->
 
 
-<div class="section no-pad-bot">
+<div class="section no-pad-bot white">
 
 
     <div class="row"><!-- Linha area de conteudo principal -->
-      <div class="col s12 amarelo margem"><!-- BG Amarelo conteudo principal -->
-        <div class="col l8 s12 white  z-depth-1 borda" style="min-height:532px;  margin-top: 8px;"><!-- Conteudo dos Cursos -->          
+      <div class="col s12 margem"><!-- BG Amarelo conteudo principal -->
+        <div class="col l8 s12 white z-depth-1" style="min-height:532px;  margin-top: 8px;"><!-- Conteudo dos Cursos -->          
             <div id="<?php echo $page->ID; ?>" class="col s12 m12 l9">
               <h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php global $post; echo $post->post_title; ?></a></h2>
               <div class="entry"></div>

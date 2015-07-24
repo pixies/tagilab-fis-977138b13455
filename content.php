@@ -21,7 +21,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-<div class="divider">iiiiiiiiiii</div>
+<div class="divider"></div>
 	<?php if ( is_search() ) : ?>
 		<div class="entry-summary">
 			<?php the_excerpt(); ?>

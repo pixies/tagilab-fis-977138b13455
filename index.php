@@ -37,6 +37,7 @@ get_header(); ?>
   -ms-transform: scale(1);
   transform: scale(1);
 }
+
 .grid figure {
   position: relative;
   float: left;
